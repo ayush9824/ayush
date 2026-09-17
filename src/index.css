@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply bg-ink-950 text-bone-100;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Default visible focus ring for keyboard users, overridable per element. */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ember-400;
+  }
+
+  body {
+    @apply min-h-screen bg-ink-950 font-sans text-bone-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-ember-400/30 text-bone-50;
+  }
+
+  /* Respect reduced motion globally. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
